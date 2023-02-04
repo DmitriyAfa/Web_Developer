@@ -1,6 +1,6 @@
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as webpack from 'webpack';
-import * as path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from 'webpack';
+import path from "path";
 
 const config: webpack.Configuration = {
   mode: "production",
@@ -29,4 +29,4 @@ const config: webpack.Configuration = {
   ],
 };
 
-module.exports = config;
+export default config;
