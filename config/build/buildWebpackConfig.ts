@@ -7,20 +7,21 @@ import { BuildOptions } from "./types/config";
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const { mode, paths } = options;
+  const { mode, paths, isDev } = options;
   return {
     mode,
     entry: paths.entry,
-    devtool: 'inline-source-map',
+    devtool: isDev ? 'inline-source-map' : undefined,
     output: {
       path: paths.build,
-      filename: "index.js",
+      filename: "[name].[hash].js",
+      clean: true
     },
     module: {
       rules: buildRules(),
     },
     resolve: buildResolvers(),
     plugins: buildPlugins(options),
-    devServer: buildDevServer(options),
+    devServer: isDev ? buildDevServer(options) : undefined,
   }
 }
