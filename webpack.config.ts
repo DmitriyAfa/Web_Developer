@@ -1,10 +1,14 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ProgressPlugin = require("progress-webpack-plugin");
-const path = require("path");
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import * as webpack from 'webpack';
+import * as path from "path";
 
-module.exports = {
+const config: webpack.Configuration = {
   mode: "production",
   entry: path.resolve(__dirname, "src", "index.ts"),
+  output: {
+    path: path.resolve(__dirname, "./build"),
+    filename: "index.js",
+  },
   module: {
     rules: [
       {
@@ -17,14 +21,12 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  output: {
-    path: path.resolve(__dirname, "./build"),
-    filename: "index.js",
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public", "index.html"),
     }),
-    new ProgressPlugin(),
+    new webpack.ProgressPlugin(),
   ],
 };
+
+module.exports = config;
