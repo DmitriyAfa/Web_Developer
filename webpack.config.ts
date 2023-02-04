@@ -3,6 +3,7 @@ import path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildOptions } from './config/build/types/config';
 
+const PORT = 3000;
 const mode = "development";
 
 const isDev = mode === "development";
@@ -17,6 +18,7 @@ const options: BuildOptions = {
   mode,
   paths,
   isDev,
+  port: PORT,
 }
 
 const config: webpack.Configuration = buildWebpackConfig(options)

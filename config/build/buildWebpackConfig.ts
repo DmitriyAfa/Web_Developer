@@ -1,4 +1,5 @@
 import webpack from "webpack";
+import { buildDevServer } from "./buildDevServer";
 import { buildPlugins } from "./buildPlugins";
 import { buildResolvers } from "./buildResolvers";
 import { buildRules } from "./buildRules";
@@ -10,6 +11,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
   return {
     mode,
     entry: paths.entry,
+    devtool: 'inline-source-map',
     output: {
       path: paths.build,
       filename: "index.js",
@@ -19,5 +21,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     },
     resolve: buildResolvers(),
     plugins: buildPlugins(options),
+    devServer: buildDevServer(options),
   }
 }
