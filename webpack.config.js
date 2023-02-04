@@ -8,5 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, "./build"),
     filename: "index.js",
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./public", "index.html"),
+    }),
+  ],
 };
