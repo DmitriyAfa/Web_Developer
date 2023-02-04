@@ -1,3 +1,3 @@
 import { hello } from "./test";
 
-hello(137);
+hello(1372);
