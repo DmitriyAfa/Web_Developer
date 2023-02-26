@@ -1,0 +1,1 @@
+export { FrontendPageAsync as FrontendPage } from "./ui/FrontendPage.async";
