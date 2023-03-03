@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom";
-import { Counter } from "../components/Counter";
+import { useContext } from "react";
+import { classNames } from "../shared/helpers/classNames/classNames";
 import { AppRouter } from "./providers/router";
+import { ThemeContext } from "./providers/ThemeProvider/lib/ThemeContext";
 import './styles/index.scss'
+import { ThemeSwitcher } from "./ui/ThemeSwitcher";
 
 export const App = () => {
+  const { theme } = useContext(ThemeContext);
+  console.log(theme)
   return (
-    <div className='app'>
-      <Link to='/'>Главная</Link>
-      <Link to='/frontend'>Frontend</Link>
+    <div className={classNames('app', [theme])}>
       <AppRouter />
+      <ThemeSwitcher />
     </div>
   );
 };
