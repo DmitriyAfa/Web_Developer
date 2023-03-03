@@ -38,6 +38,25 @@ export function buildRules({ isDev }: BuildOptions): RuleSetRule[] {
       "sass-loader",
     ],
   }
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
 
-  return [typescriptRules, styleLoader]
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
+
+  return [
+    fileLoader,
+    svgLoader,
+    typescriptRules,
+    styleLoader
+  ]
 }

@@ -1,0 +1,23 @@
+.AppLink {
+  color: var(--primary-color);
+
+  span {
+    margin-right: 5px;
+
+    svg {
+      stroke: black;
+      fill: var(--primary-color);
+    }
+  }
+}
+
+.active {
+  color: var(--red-light);
+  font-weight: 600;
+
+  span {
+    svg {
+      fill: var(--red-light);
+    }
+  }
+}
