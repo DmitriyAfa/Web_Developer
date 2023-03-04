@@ -9,7 +9,6 @@ import './styles/index.scss'
 
 export const App = () => {
   const { theme } = useContext(ThemeContext);
-  console.log(theme)
   return (
     <div className={classNames('app', [theme])}>
       <Navbar />
