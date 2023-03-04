@@ -1,12 +1,12 @@
 .AppLink {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 
   span {
     margin-right: 5px;
 
     svg {
       stroke: black;
-      fill: var(--secondary-color);
+      fill: var(--primary-color);
     }
   }
 }

@@ -1,0 +1,1 @@
+export { Text, TextAlign, TextTypes } from "./ui/Text/Text";
