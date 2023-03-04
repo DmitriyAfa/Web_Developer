@@ -22,6 +22,7 @@ export const Sidebar = (props: SidebarProps) => {
   }
   return (
     <div className={classNames(cls.Sidebar, [className], { [cls.collapsed]: collapsed })}>
+
       <Button
         className={isRight ? cls.collapseBtnRight : cls.collapseBtn}
         onClick={onToggle}
@@ -29,7 +30,7 @@ export const Sidebar = (props: SidebarProps) => {
         theme={ButtonTheme.OUTLINE}
         size={ButtonSize.M}
       >
-        Toggle
+        {collapsed ? '>' : '<'}
       </Button>
 
       <div className={cls.switchers}>

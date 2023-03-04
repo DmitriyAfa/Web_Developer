@@ -6,7 +6,7 @@
 .app {
   font: var(--font-m);
   color: var(--primary-color);
-  background: var(--bg-color);
+  background: var(--inverted-bg-color);
   min-height: 100vh;
 }
 
@@ -15,6 +15,10 @@
 }
 
 .page-wrapper {
+  background: var(--bg-color);
   flex-grow: 1;
   padding: 20px;
+
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
 }

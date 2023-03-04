@@ -1,0 +1,35 @@
+.Accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  border: 1px solid var(--inverted-primary-color);
+  border-radius: var(--border-radius);
+}
+
+.control {
+  display: flex;
+  cursor: pointer;
+  margin: 10px 5px;
+  justify-content: space-between;
+
+  padding: 0 10px;
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+.content {
+  overflow: hidden;
+  height: 0;
+  margin: 0 auto;
+}
+
+.AccordionOpened {
+  .content {
+    overflow: visible;
+    height: auto;
+  }
+}
